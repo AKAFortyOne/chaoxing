@@ -143,12 +143,8 @@ poetry.lock
 # Custom files
 .cookies.txt
 cookies.txt
-.config.ini
-config.ini
 chaoxing.log
-config*.ini
 .chaoxing.log
-./config.ini
 ./chaoxing.log
 ./cookies.txt
 .idea/
