@@ -22,7 +22,6 @@ jobs:
       - name: 安装依赖包
         run: | # 安装依赖包
           pip install -r ./requirements.txt 
-          
 
       - name: Build win bin
         run: pyinstaller -F main.py -n 'chaoxing' --add-data "resource;resource" --hidden-import=chardet
