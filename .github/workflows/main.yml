@@ -23,20 +23,5 @@ jobs:
         run: | # 安装依赖包
           pip install -r ./requirements.txt 
 
-      - name: Build win bin
-        run: pyinstaller -F main.py -n 'chaoxing' --add-data "resource;resource" --hidden-import=chardet
-
-      - name: Create release package
-        run: |
-          mkdir release
-          copy dist\chaoxing.exe release\
-          copy config_template.ini release\
-          cd release
-          7z a -tzip chaoxing.zip *
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.name }}
-          path: 'release/chaoxing.zip'
       - name: Run main.py
         run: python main.py -c config.ini
